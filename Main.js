@@ -5196,12 +5196,12 @@ var $author$project$Main$calculateEnrichedRecipe = function (parms) {
 	var starterWater = (starterAmount / 2) | 0;
 	var starterFlour = starterWater;
 	var saltAmount = $elm$core$Basics$round((parms.totalFlour * parms.saltPercent) / 100.0);
-	var recipeSugar = $elm$core$Basics$round(((parms.totalFlour * parms.saltPercent) * 2) / 100.0);
+	var recipeSugar = $elm$core$Basics$round(((parms.totalFlour * parms.saltPercent) * 3) / 100.0);
 	var recipeHydration = totalWater - starterWater;
-	var recipeMilk = $elm$core$Basics$round(recipeHydration * 0.67);
+	var recipeMilk = $elm$core$Basics$round(recipeHydration * 0.40);
 	var recipeFlour = parms.totalFlour - starterFlour;
-	var recipeEggs = $elm$core$Basics$round(recipeHydration * 0.33);
-	var recipeButter = $elm$core$Basics$round(parms.totalFlour * 0.4);
+	var recipeEggs = $elm$core$Basics$round(recipeHydration * 0.60);
+	var recipeButter = $elm$core$Basics$round(parms.totalFlour * 0.2);
 	var totalDoughWeight = (((((recipeFlour + recipeMilk) + recipeEggs) + recipeButter) + starterAmount) + saltAmount) + recipeSugar;
 	return {recipeButter: recipeButter, recipeEggs: recipeEggs, recipeFlour: recipeFlour, recipeMilk: recipeMilk, recipeSugar: recipeSugar, saltAmount: saltAmount, starterAmount: starterAmount, totalDoughWeight: totalDoughWeight};
 };

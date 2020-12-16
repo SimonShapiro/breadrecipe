@@ -64,11 +64,11 @@ calculateEnrichedRecipe parms =
     totalWater = round (Basics.toFloat parms.totalFlour * parms.hydration/100.0)
     recipeFlour = parms.totalFlour - starterFlour
     recipeHydration = totalWater - starterWater
-    recipeMilk = round (Basics.toFloat recipeHydration * 0.67)
-    recipeEggs = round (Basics.toFloat recipeHydration * 0.33)
-    recipeButter = round(Basics.toFloat parms.totalFlour * 0.4)
+    recipeMilk = round (Basics.toFloat recipeHydration * 0.40)
+    recipeEggs = round (Basics.toFloat recipeHydration * 0.60)
+    recipeButter = round(Basics.toFloat parms.totalFlour * 0.2)
     saltAmount = round (Basics.toFloat parms.totalFlour * parms.saltPercent/100.0)
-    recipeSugar = round (Basics.toFloat parms.totalFlour * parms.saltPercent * 2/100.0)
+    recipeSugar = round (Basics.toFloat parms.totalFlour * parms.saltPercent * 3/100.0)
     totalDoughWeight = (recipeFlour + recipeMilk + recipeEggs + recipeButter + starterAmount + saltAmount + recipeSugar)
   in
     { recipeFlour = recipeFlour
